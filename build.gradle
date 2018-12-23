@@ -1,0 +1,162 @@
+
+buildscript {
+    repositories {
+        google()
+        jcenter()
+        mavenCentral();
+
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.1.3'
+
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+        flatDir {
+            dirs 'libs'
+        }
+    }
+}
+
+apply plugin: 'com.android.application'
+
+
+android {
+//    configurations { all*.exclude group: 'com.android.support', module: 'support-annotations' }
+//    configurations { all*.exclude group: 'com.android.support', module: 'support-v4' }
+    compileSdkVersion 26
+    buildToolsVersion '27.0.3'
+    defaultConfig {
+        applicationId "com.movingstudio.secretstory"
+        minSdkVersion 21
+        targetSdkVersion 26
+        versionName = "1.3.5"
+        versionCode = 25
+        multiDexEnabled true
+        flavorDimensions "versionCode"
+
+    }
+    lintOptions {
+        abortOnError false
+    }
+    dexOptions {
+        //preDexLibraries true
+        //incremental true
+        javaMaxHeapSize "4g"
+    }
+
+    buildTypes {
+        debug {
+            minifyEnabled false
+            useProguard false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-unity.txt'
+            jniDebuggable true
+
+        }
+        release {
+            lintOptions {
+                disable 'MissingTranslation'
+            }
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+        }
+
+    }
+
+    sourceSets {
+        main {
+            manifest.srcFile 'src/main/AndroidManifest.xml'
+            java.srcDirs = ['src/main/java']
+            resources.srcDirs = ['src/main/java']
+            aidl.srcDirs = ['src/main/aidl']
+            renderscript.srcDirs = ['src/main/java']
+            res.srcDirs = ['src/main/res']
+            assets.srcDirs = ['src/main/assets']
+            //jni.srcDirs = [] //cheat gradle to skip jni.srcDirs = ['jni'] so that disable ndkbuild
+            jniLibs.srcDirs = ['src/main/jniLibs']
+        }
+
+        tianyi {
+            java.srcDirs = ['src/tianyi/java']
+            manifest.srcFile 'src/tianyi/AndroidManifest.xml'
+            res.srcDirs = ['src/tianyi/res']
+        }
+        huawei {
+            java.srcDirs = ['src/tianyi/java']
+            manifest.srcFile 'src/tianyi/AndroidManifest.xml'
+            res.srcDirs = ['src/tianyi/res']
+        }
+
+        m4399 {
+            java.srcDirs = ['src/m4399/java']
+            manifest.srcFile 'src/m4399/AndroidManifest.xml'
+            res.srcDirs = ['src/m4399/res']
+            jniLibs.srcDirs = ['src/m4399/jniLibs']
+            assets.srcDirs = ['src/m4399/assets']
+        }
+
+    }
+    productFlavors {
+        tianyi{
+            applicationId 'com.movingstudio.secretstory'
+            manifestPlaceholders = [MY_CHANNEL_VALUE: "tianyi"]
+        }
+        huawei{
+            applicationId 'com.tykj.Story.huawei'
+            manifestPlaceholders = [MY_CHANNEL_VALUE: "tianyi"]
+        }
+        m4399{
+            applicationId 'com.tykj.Story.m4399'
+            manifestPlaceholders = [MY_CHANNEL_VALUE: "tianyi"]
+        }
+
+    }
+    buildToolsVersion '27.0.3'
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar', '*.aar'], dir: 'libs')
+
+    implementation fileTree(include: ['*.jar', '*.aar'], dir: 'social/libs')
+
+    implementation 'com.android.support:support-v4:27.1.1'
+    implementation 'com.android.support:appcompat-v7:27.1.1'
+
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+
+    //**************************************Zeus**************************************/
+    // Applovin Adapter for AdMob
+    implementation project(':unity-android-resources')
+    implementation project(':BaseGameUtils')
+    implementation project(':social')
+
+    implementation 'com.google.android.gms:play-services-ads:12.0.1'
+    implementation 'com.google.android.gms:play-services:12.0.1'
+    //implementation 'com.google.firebase:firebase-messaging:9.8.0'
+    implementation 'com.android.support:multidex:1.0.3'
+    implementation 'android.arch.lifecycle:extensions:1.1.0'
+    implementation 'com.googlecode.json-simple:json-simple:1.1'
+
+    implementation files('libs/alipaySingle-20170510.jar')
+//    implementation files('libs/android-support-v13.jar')
+    implementation files('libs/m4399SingleOperateSDK.jar')
+    implementation files('libs/m4399SingleRechargeSDK.jar')
+
+    //**************************************Zeus**************************************/
+    implementation 'com.android.support:support-core-utils:25.3.1'
+    //依赖云步SDK
+    //implementation(name: 'zeus_v2.7.0', ext: 'aar')
+    implementation 'com.android.support:multidex:1.0.1'
+    implementation 'com.android.volley:volley:1.0.0'
+    implementation 'com.alibaba:fastjson:1.1.55.android'
+    //**************************************Zeus**************************************/
+}
