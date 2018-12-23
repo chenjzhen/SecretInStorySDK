@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="m4399_rec_main_title">选择支付方式</string>
+    <string name="m4399_rec_amount_payment">支付金额： </string>
+    <string name="m4399_rec_unit_yuan">元</string>
+    <string name="m4399_rec_zhifubaozc">支付宝充值</string>
+    <string name="m4399_rec_duanxincz">短信充值</string>
+    <string name="m4399_rec_caifutongcz">财付通充值</string>
+    <string name="m4399_rec_weixin">微信充值</string>
+    <string name="m4399_rec_rec_wycz">网银充值</string>
+    <string name="m4399_rec_yikatong">4399一卡通</string>
+    <string name="m4399_rec_yikatongcz">4399一卡通充值</string>
+    <string name="m4399_rec_mobilecardcz">手机充值卡充值</string>
+    <string name="m4399_rec_junka">骏网一卡通</string>
+    <string name="m4399_rec_junkacz">骏网一卡通充值</string>
+    <string name="m4399_rec_good_subject">（%s）</string>
+    <string name="m4399_rec_identity_online">账号：%1s</string>
+    <string name="m4399_rec_identity_console">ID：%1s</string>
+    <string name="m4399_rec_other_sum">其他金额：</string>
+    <string name="m4399_rec_input_cash_hint">请输入你要充值的金额</string>
+    <string name="m4399_rec_confirm_pay">确认支付</string>
+    <string name="m4399_rec_hotline_4399"><u>400-633-4399 </u></string>
+    <string name="m4399_rec_hotline_yidong"><u>400-633-4399 </u></string>
+    <string name="m4399_rec_hotline_dianxin"><u>4008867686</u></string>
+    <string name="m4399_rec_hotline_liantong"><u>4000600611</u></string>
+    <string name="m4399_rec_try_other_payment">其他充值方式</string>
+    <string name="m4399_rec_return">其他充值方式</string>
+    <string name="m4399_rec_previous_step">上一步</string>
+
+    <!-- For identifying code check dialog -->
+    <string name="m4399_rec_cancel">取消</string>
+    <string name="m4399_rec_ok">确定</string>
+    <string name="m4399_rec_id_refresh">刷新</string>
+    <string name="m4399_rec_pay_hint">充值提示</string>
+    <string name="m4399_rec_next_step">下一步</string>
+    <string name="m4399_rec_id_dialog_title">请输入验证码</string>
+    <string name="m4399_rec_id_message">验证码错误，请重新填写</string>
+    <string name="m4399_rec_id_fail_no_network">不能通过验证，请检查网络状况</string>
+    <string name="m4399_rec_id_refresh_no_network">不能刷新验证码，请检查网络状况</string>
+
+    <!-- For Dialing phone dialog -->
+    <string name="m4399_rec_call_phone_tips">是否要拨打充值热线</string>
+    <string name="m4399_rec_call_cancel">不用了</string>
+    <string name="m4399_rec_call_ok">现在拨打</string>
+
+    <!-- For web pay dialog fragment -->
+    <string name="m4399_rec_pay_web_promot">提示</string>
+    <string name="m4399_rec_pay_web_message">您确定要取消充值操作吗？</string>
+    <string name="m4399_rec_pay_web_cancel">继续充值</string>
+    <string name="m4399_rec_pay_web_ok">取消充值</string>
+
+    <!-- For instruction dialog -->
+    <string name="m4399_rec_liantong">联通</string>
+    <string name="m4399_rec_dianxin">电信</string>
+    <string name="m4399_rec_yidongka">移动</string>
+    <string name="m4399_rec_ins_suffix">说明</string>
+    <string name="m4399_rec_ins_link_sms_yidong">移动短信充值</string>
+    <string name="m4399_rec_ins_link_sms_liantong">联通短信充值</string>
+    <string name="m4399_rec_ins_link_sms_dianxin">电信短信充值</string>
+    <string name="m4399_rec_ins_link_junka">骏网一卡通说明</string>
+    <string name="m4399_rec_ins_link_yidongka">移动充值卡说明</string>
+    <string name="m4399_rec_ins_link_liantongka">联通充值卡说明</string>
+    <string name="m4399_rec_ins_link_dianxinka">电信充值卡说明</string>
+    <string name="m4399_rec_ins_link_yikatong">4399一卡通说明</string>
+    <string name="m4399_rec_ins_sms_yidong_title">移动短信充值说明</string>
+    <string name="m4399_rec_ins_sms_liantong_title">联通短信充值说明</string>
+    <string name="m4399_rec_ins_sms_dianxin_title">电信短信充值说明</string>
+    <string name="m4399_rec_ins_junka_title">骏网一卡通充值说明</string>
+    <string name="m4399_rec_ins_yidongka_title">移动充值卡说明</string>
+    <string name="m4399_rec_ins_liantongka_title">联通充值卡说明</string>
+    <string name="m4399_rec_ins_dianxinka_title">电信充值卡说明</string>
+    <string name="m4399_rec_ins_yikatong_title">4399一卡通充值说明</string>
+    <string name="m4399_rec_ins_close">关闭</string>
+
+    <!-- For progress dialog -->
+    <string name="m4399_rec_on_fetching_config">正在获取充值配置，请稍候</string>
+    <string name="m4399_rec_on_loading">正在加载，请稍候 </string>
+    <string name="m4399_rec_on_processing">正在处理，请稍候 </string>
+    <string name="m4399_rec_on_recharging">正在充值，请稍候 </string>
+    <string name="m4399_rec_on_opening_web">正在打开网页，请稍候</string>
+    <string name="m4399_rec_on_parsing_result">正在解析网页结果，请稍后</string>
+
+    <!-- For card serial and password area -->
+    <string name="m4399_rec_input_card_serial">请输入充值卡号</string>
+    <string name="m4399_rec_input_card_psword">请输入充值密码</string>
+    <string name="m4399_rec_error_order">订单异常</string>
+    <string name="m4399_rec_empty_serial_passwd">卡号或密码不能为空，请输入正确卡号和密码</string>
+    <string name="m4399_rec_error_serial">卡号长度有误，请重新核对\n(%1$s卡号为%2$d位, 密码%3$d位)</string>
+    <string name="m4399_rec_error_psword">密码长度有误，请仔细核对\n(%1$s卡号为%2$d位, 密码%3$d位)</string>
+
+    <!-- For multi-card confirm fragment -->
+    <string name="m4399_rec_multi_card_indicator">您已选择了%s充值卡</string>
+
+    <!-- For order or input sum checker -->
+    <string name="m4399_rec_amount_illegal">金额必须是整数，且首位不能是0</string>
+    <string name="m4399_rec_amount_exceed">所填金额超出范围 (%1s)，请重新填写</string>
+    <string name="m4399_rec_amount_error_formatter">所填金额超出范围 (%1$d - %2$d)，请重新填写</string>
+
+    <!-- For pay result -->
+    <string name="m4399_rec_result_no_network">网络请求失败, 请检查网络状况</string>
+    <string name="m4399_rec_result_access_rec_config_error">获取充值配置失败，建议退出游戏重新加载</string>
+    <string name="m4399_rec_result_faile_fetch_online_date">获取网络数据失败，请检查网络状况</string>
+    <string name="m4399_rec_result_success">充值成功</string>
+    <string name="m4399_rec_result_on_process">充值处理中，请于一分钟后在游戏内查询。</string>
+    <string name="m4399_rec_result_order_error">充值下单异常，建议关闭充值页面重试或者用其他方式充值</string>
+    <string name="m4399_rec_result_system_abnormal">系统异常</string>
+    <string name="m4399_rec_result_error_data">数据格式不正确</string>
+    <string name="m4399_rec_result_inquriying_result">支付结果在确认中</string>
+    <string name="m4399_rec_result_user_canclled">取消支付操作</string>
+    <string name="m4399_rec_result_failed_pay">订单支付失败</string>
+    <string name="m4399_rec_result_failed_pay_online">网页支付失败</string>
+    <string name="m4399_rec_result_miss_result">不能获取操作结果,请检查网络状态</string>
+    <string name="m4399_rec_result_send_sms_failed">发送短信失败, 请检查系统是否限制此应用发送短信</string>
+    <string name="m4399_rec_result_send_sms_timeout">发送短信超时, 请检查手机话费是否充足再重试</string>
+    <string name="m4399_rec_result_order_submitted_tips">订单已提交</string>
+    <string name="m4399_rec_result_failed_unknown">未知原因导致支付失败，请检查网络和是否正常登陆</string>
+
+    <!-- For sms and its confirm fragment -->
+    <string name="m4399_rec_sms_send_error">短信发送出错，请检查应用是否被允许发送短信，或使用其他方式充值</string>
+    <string name="m4399_rec_sms_yidong_smsorder_error">使用移动短代充值出错，请稍后再试或使用其他方式充值</string>
+    <string name="m4399_rec_sms_good_name">商品名称： %1s</string>
+    <string name="m4399_rec_sms_good_price">订单价格：%1s (不含通信费)</string>
+    <string name="m4399_rec_sms_hotline">%1s</string>
+    <string name="m4399_rec_sms_import_tips_head">特别提示：</string>
+    <string name="m4399_rec_sms_import_tips_one">1.请勿手动发送短信，如出现短信安全警告请选择“允许”。</string>
+    <string name="m4399_rec_sms_import_tips_two">2.点击“确认支付”即同意向运营商发送短信以完成支付，费用由本机话费扣除。</string>
+    <string name="m4399_rec_sms_import_tips_three">3.信息费由4399手机游戏代收。</string>
+    <string name="m4399_rec_sms_cfm_title">订单支付</string>
+
+    <!-- For pay result fragment or tips -->
+    <string name="m4399_rec_pay_failed_tips">充值失败</string>
+    <string name="m4399_rec_warm_tips_formatter">温馨提示：%1s</string>
+    <!-- string name="m4399_rec_warm_tips_port_formatter">%1s</string -->
+    <string name="m4399_rec_card_error_tips">请重新尝试充值或联系客服咨询</string>
+    <string name="m4399_rec_card_delay_tips">若未及时到账，请重新尝试充值或联系客服咨询</string>
+    <!-- string name="m4399_rec_pay_eorder_head">订单号：</string -->
+    <string name="m4399_rec_acount">账号：</string>
+    <string name="m4399_rec_identity">Id: </string>
+    <!-- string name="m4399_rec_single_string_formatter">%1s</string -->
+    <!-- string name="m4399_rec_eorder_port_formatter">@string/m4399_rec_single_string_formatter</string -->
+    <string name="m4399_rec_eorder_formatter">订单号：%1s</string>
+    <string name="m439_rec_hotline_prefix">客服热线：</string>
+    <string name="m4399_rec_faq_link"><u>常见问题解决</u></string>
+    <string name="m4399_rec_result_mark_repeat">充值失败，游戏方订单重复</string>
+    <string name="m4399_rec_result_mark_repeat_warmtips">不能重复下单，请关闭页面重新尝试</string>
+
+
+    <!-- For Sms pay and its timer fragment -->
+    <string name="m4399_rec_duanxin_timer_prefix">正在为您充值，请耐心等候 &#8230;</string>
+    <string name="m4399_rec_duanxin_timer">（%s秒）</string>
+    <string name="m4399_rec_sms_hint_prefix">温馨提示：</string>
+    <string name="m4399_rec_sms_hint_body">充值中，请勿进行其他操作</string>
+
+    <!-- For sms pay promotion dialog -->
+    <string name="m4399_rec_pro_dialog_title">充值小二</string>
+    <string name="m4399_rec_pro_dialog_msg_rowa">爷请留步！</string>
+    <string name="m4399_rec_pro_dialog_msg_rowb">试试新推出的短信充值方式?</string>
+    <string name="m4399_rec_pro_dialog_quit">放弃充值</string>
+    <string name="m4399_rec_pro_dialog_pay">短信充值</string>
+
+    <!-- For maintenace dialog -->
+    <string name="m4399_rec_mt_channel">充值渠道</string>
+    <string name="m4399_rec_mt_title">%1s维护中</string>
+
+    <!-- For console payment only -->
+    <string name="m4399_rec_no_identity">充值异常，下单没有返回充值凭证</string>
+    <string name="m4399_rec_abnormal_identity">充值异常，返回订单中充值凭证异常！</string>
+    <string name="m4399_rec_result_console_pay_success">操作成功，等待查询结果和发放物品</string>
+    <string name="m4399_rec_result_console_pay_failed">充值失败</string>
+    <string name="m4399_rec_result_console_sing_invalid">数据签名错误，查询订单失败</string>
+    <string name="m4399_rec_result_console_mark_repeat">充值失败，游戏方订单重复</string>
+
+    <!-- For console payment notification -->
+    <string name="m4399_rec_ntf_ticker_text_success">您在《%1$s》中充值购买成功，可在游戏内查看详情</string>
+    <string name="m4399_rec_ntf_ticker_text_failed">您在《%1$s》中充值购买失败，前在游戏内查看详情</string>
+    <string name="m4399_rec_ntf_content_title_success">充值购买成功</string>
+    <string name="m4399_rec_ntf_content_title_failed">充值购买失败</string>
+    <string name="m4399_rec_ntf_content_success_text">您购买“%1$s”成功</string>
+    <string name="m4399_rec_ntf_content_failed_text">您购买“%1$s”失败</string>
+    <string name="m4399_rec_ntf_content_and">和</string>
+    <string name="m4399_rec_ntf_porder">充值订单：%s</string>
+
+    <!-- For recharge record -->
+    <string name="m4399_rec_entry_text">未\n完\n成\n订\n单</string>
+    <string name="m4399_rec_my_order">未完成订单</string>
+    <string name="m4399_rec_history_order_hint">小贴士：这里只会保留近期的订单记录~</string>
+    <string name="m4399_rec_refresh">刷新</string>
+    <string name="m4399_rec_refresh_remain_time">%1d 秒</string>
+    <string name="m4399_rec_refresh_pay_state_success">成功</string>
+    <string name="m4399_rec_refresh_pay_state_failed">失败</string>
+    <string name="m4399_rec_refresh_pay_state_processing">未完成</string>
+    <string name="m4399_rec_record_ptime">时间</string>
+    <string name="m4399_rec_record_porder">订单号</string>
+    <string name="m4399_rec_record_pmoney">金额</string>
+    <string name="m4399_rec_record_pstate">状态</string>
+    <string name="m4399_rec_no_record">近期无异常订单</string>
+    <string name="m4399_rec_time_formatter_after_today">MM月dd日\nHH:mm</string>
+    <string name="m4399_rec_time_formatter_today">今天HH:mm</string>
+    <string name="m4399_rec_time_formatter_yestoday">昨天HH:mm</string>
+    <string name="m4399_rec_time_formatter_before_yestorday">MM月dd日\nHH:mm</string>
+    <string name="m4399_rec_on_refreshing_order">正在刷新订单</string>
+    <string name="m4399_rec_no_need_refresh">没有订单可刷新！</string>
+    <string name="m4399_rec_on_refresh_finished">本次更新%1d条订单(刷新时保证请保证网络畅通，刷新后仍有未完成订单，请重新尝试)</string>
+    <string name="m4399_rec_record_editor_operation">操作</string>
+    <string name="m4399_rec_record_editor_paste">复制</string>
+    <string name="m4399_rec_record_editor_cancel">取消</string>
+    <string name="m4399_rec_record_editor_paste_label">订单号</string>
+    <string name="m4399_rec_record_editor_operation_result">订单号已复制</string>
+
+    <!-- For Weixin Payment -->
+    <string name="m4399_rec_wx">微信</string>
+    <string name="m4399_rec_wx_paytype_short_name">微信支付</string>
+    <string name="m4399_rec_wx_install_tips">您尚未安装微信，请先安装或选择其他支付方式</string>
+    <string name="m4399_rec_qq_install_tips">您尚未安装手机QQ，请先安装或选择其他支付方式</string>
+    <string name="m4399_rec_ins_link_wx">微信支付</string>
+    <string name="m4399_rec_ins_link_wx_title">微信支付说明</string>
+    <string name="m4399_rec_wx_pay_failed">支付失败，无法启动微信支付模块。请手动打开微信后再尝试</string>
+    <string name="m4399_rec_wx_pay_failed_start_error">支付失败，无法启动安全支付组件</string>
+    <string name="m4399_rec_wx_pay_failed_warmtips">微信可能未正常登陆。请您先登录微信，并确认微信支付功能正常</string>
+
+    <!-- For iab -->
+    <string name="m4399_rec_sdk_version">2.6.0.0</string>
+    <string name="m4399_rec_iab_apk_not_installed">您未安装最新的4399安全支付组件，无法使用支付功能</string>
+    <string name="m4399_rec_iab_check_version">正在检测支付组件版本</string>
+    <string name="m4399_rec_iab_apk_version_outdate">您安装的4399安全支付组件版本过低，请升至最新版本</string>
+    <string name="m4399_rec_iab_upgrade_error">%s, 请使用其他支付方式</string>
+    <string name="m4399_rec_iab_storage_error">手机上没有合适的存储位置</string>
+    <string name="m4399_rec_iab_recreate_error">创建下载临时文件失败</string>
+    <string name="m4399_rec_iab_network_error">网络异常</string>
+    <string name="m4399_rec_iab_support_error">暂不支持此充值方式</string>
+    <string name="m4399_rec_iab_no_remote_service">检测不到支付服务</string>
+    <string name="m4399_rec_iab_bind_service_error">不能绑定支付服务</string>
+    <string name="m4399_rec_iab_remote_ipc_error">远程通信出错，请尝试重新支付</string>
+    <string name="m4399_rec_iab_install_title">安装4399安全支付组件</string>
+    <string name="m4399_rec_iab_upgrade_title">升级4399安全支付组件</string>
+    <string name="m4399_rec_iab_error_title">更新4399安全支付出错</string>
+    <string name="m4399_rec_iab_download_message">正在更新4399安全支付组件......</string>
+    <string name="m4399_rec_iab_download_percentage">（%d%%）</string>
+    <string name="m4399_rec_iab_cancel_upgrade">取消</string>
+    <string name="m4399_rec_iab_intall_now">立即安装</string>
+    <string name="m4399_rec_iab_upgrade_now">立即升级</string>
+    <string name="m4399_rec_iab_close_dialog">关闭</string>
+    <string name="m4399_rec_iab_retry_download">重试</string>
+    <string name="m4399_rec_iab_validate_error">充值结果校验失败</string>
+
+    <!-- QQ wallet-->
+    <string name="m4399_rec_qq_wallet">QQ钱包</string>
+    <string name="m4399_rec_qq_wallet_not_support">您的手机还不支持QQ钱包充值，请安装手机QQ后再重试</string>
+    <string name="m4399_rec_result_qq_failed">支付未完成，订单已取消</string>
+    <string name="m4399_rec_result_server_communication_error">网络异常，请检查网络设置，在充值过程中请保持手机网络畅通。</string>
+    <string name="m4399_rec_result_order_on_process">订单已提交，支付完成后请在游戏内查看商品</string>
+
+    <!-- Wechage H5-->
+    <string name="m4399_rec_launching_wxapp">正在打开微信，请稍候</string>
+    <string name="m4399_rec_wx_pay_failed_miss_protocol">获取微信支付链接失败，无法启动微信</string>
+
+    <!-- Inquiry order-->
+    <string name="m4399_rec_on_inquiring_order">等待充值</string>
+    <string name="m4399_rec_on_inquiring_abandon">放弃充值</string>
+    <string name="m4399_rec_on_inquiring_time_formatter">放弃充值(%02ds)</string>
+    <string name="m4399_rec_on_inquiring_tips">充值过程中，请保持网络畅通。完成后可在游戏中查看到账的物品</string>
+    <string name="m4399_rec_on_inquiring_warn">正在为您查询充值结果，请勿进行其他操作</string>
+    <string name="m4399_rec_on_inquiring_alert_title">确定放弃充值？</string>
+    <string name="m4399_rec_on_inquiring_alert_message">若您已完成充值，建议继续等待，退出将可能导致充值异常</string>
+    <string name="m4399_rec_on_inquiring_alert_cancel">放弃等待</string>
+    <string name="m4399_rec_on_inquiring_alert_continue">继续等待</string>
+</resources>

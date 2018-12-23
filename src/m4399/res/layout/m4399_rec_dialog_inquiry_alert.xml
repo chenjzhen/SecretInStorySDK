@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="@dimen/m4399_rec_dialog_width"
+    android:layout_height="@dimen/m4399_rec_dialog_height"
+    android:layout_gravity="center"
+    android:background="@drawable/m4399_rec_page_bg2"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="@string/m4399_rec_on_inquiring_alert_title"
+        android:textColor="@color/m4399_rec_color_yellow"
+        android:textSize="20sp" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/m4399_default_content_description"
+        android:src="#dddddd" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.0"
+        android:gravity="center_vertical|left"
+        android:orientation="vertical"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:text="@string/m4399_rec_on_inquiring_alert_message"
+        android:textColor="@android:color/black"
+        android:lineSpacingExtra="8dp"
+        android:textSize="16sp"
+        tools:ignore="RtlHardcoded" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/m4399_rec_page_bg2"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/m4399_id_inquiry_btn_cancel"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1.0"
+            android:background="@drawable/m4399_rec_btn_inquiry_alert_cancel_bg"
+            android:gravity="center"
+            android:text="@string/m4399_rec_on_inquiring_alert_cancel"
+            android:padding="3dp"
+            android:textColor="@color/m4399_rec_color_grey"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/m4399_id_inquiry_btn_continue"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1.0"
+            android:background="@drawable/m4399_rec_btn_inquiry_alert_continue_bg"
+            android:gravity="center"
+            android:text="@string/m4399_rec_on_inquiring_alert_continue"
+            android:textColor="@android:color/white"
+            android:textSize="16sp" />
+    </LinearLayout>
+</LinearLayout>

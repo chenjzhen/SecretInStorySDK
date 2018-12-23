@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- For login and account switcher activity -->
+    <string name="m4399_ope_login_title">账号登录</string>
+    <string name="m4399_ope_close">关闭</string>
+    <string name="m4399_ope_confirm">确认</string>
+    <string name="m4399_ope_cancel">取消</string>
+    <string name="m4399_ope_warnning">提示</string>
+    <string name="m4399_ope_back">返回</string>
+    <string name="m4399_ope_to_download">前往下载</string>
+    <string name="m4399_ope_game_store">游戏盒</string>
+    <string name="m4399_ope_switch_user_failed_error_known">由于未知原因导致登录失败，请检查网络状况</string>
+    <string name="m4399_ope_error_known">由于知原因导致操作失败，请检查网络状况</string>
+
+    <string name="m4399_ope_retry">重试</string>
+    <string name="m4399_ope_loading_page">加载中，请稍候 </string>
+
+    <!-- For login and logout -->
+    <string name="m4399_ope_no_network">网络异常,不能正常访问服务器</string>
+    <string name="m4399_ope_login_success">登录成功</string>
+    <string name="m4399_ope_sdk_login_failed_unable_access_oauth2">不能取得认证</string>
+    <string name="m4399_ope_login_failed_user_cancelled">用户取消登录</string>
+    <string name="m4399_ope_login_failed_game_info_error">游戏信息出错</string>
+    <string name="m4399_ope_login_failed_error_known">由于未知原因导致登录失败，请检查网络状况</string>
+    <string name="m4399_ope_logout_success">注销成功</string>
+    <string name="m4399_ope_logout_failed_repeated">注销已成功，请勿重复注销</string>
+    <string name="m4399_ope_logout_failed_not_logging">注销失败，请检查当前是否在登录状态</string>
+    <string name="m4399_ope_logout_failed_error_unknown">由于未知原因导致登出失败，请检查网络或者是否已经登录成功</string>
+
+    <!-- For check and update apk -->
+    <string name="m4399_ope_check_error">检查更新失败</string>
+    <string name="m4399_ope_result_code">错误码： %1$d</string>
+    <string name="m4399_ope_result_msg">错误信息： %1$s</string>
+    <string name="m4399_ope_check_storage_error">没有足够可用的存储空间</string>
+    <string name="m4399_ope_check_md5_error">检查当前包信息出错</string>
+    <string name="m4399_ope_update_now">立即更新</string>
+    <string name="m4399_ope_install_now">立即安装</string>
+    <string name="m4399_ope_dialog_update_title">游戏更新（%s版)</string>
+    <string name="m4399_ope_dialog_install_title">安装新版本（%s版)</string>
+    <string name="m4399_ope_dialog_downloding_msg">游戏升级中，请耐心等待&#8230;</string>
+    <string name="m4399_ope_dialog_size_label">大小：</string>
+    <string name="m4399_ope_dialog_update_time">时间：%s</string>
+    <string name="m4399_ope_action_cancel">取消</string>
+    <string name="m4399_ope_action_next_time">下次再说</string>
+    <string name="m4399_ope_sdk_update_success">更新成功</string>
+    <string name="m4399_ope_update_result_no_update">无更新内容</string>
+    <string name="m4399_ope_update_result_user_canclled">用户取消更新</string>
+    <string name="m4399_ope_update_result_update_now">立即更新</string>
+    <string name="m4399_ope_update_result_download_success">下载APK成功</string>
+    <string name="m4399_ope_update_result_network_error">不能正常访问服务器，检查更新失败</string>
+    <string name="m4399_ope_update_result_check_error">由于未知原因导致检查版本失败</string>
+    <string name="m4399_ope_update_result_download_error">由于未知原因导致下载失败</string>
+    <string name="m4399_ope_retry_too_many_times">重试次数过多，请检查网络是否通畅</string>
+    <string name="m4399_ope_update_force_hint">再次点击，退出游戏</string>
+
+    <!-- For pre-pay -->
+    <string name="m4399_ope_requesting_recharge">正在生成充值订单</string>
+    <string name="m4399_ope_pay_failed_init_error">初始化充值中心失败</string>
+    <string name="m4399_ope_pay_failed_fetch_token">请登录游戏后再充值</string>
+    <string name="m4399_ope_pay_failed_unknown_error">由于未知原因导致充值失败，请检查网络和是否已经登录成功</string>
+
+    <string name="m4399_ope_sdk_unknown_circumstance">未知情况</string>
+
+    <!--  弹窗界面 -->
+    <string name="m4399_ope_pop_circle">游戏圈</string>
+    <string name="m4399_ope_pop_circle_warnning_msg">游戏圈由4399游戏盒提供，内含丰富的攻略和游戏礼包，您是否要前往下载？</string>
+    <string name="m4399_ope_pop_user">账户</string>
+    <string name="m4399_ope_pop_hide">隐藏</string>
+
+    <string name="m4399_ope_pay_failed_je_error">充值金额只能是(1~50000)之间的整数</string>
+
+    <string name="m4399_ope_ssl_error">SSL证书错误</string>
+    <string name="m4399_ope_ssl_error_code">SSL错误码: </string>
+    <string name="m4399_ope_continue">继续</string>
+
+</resources>
