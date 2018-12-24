@@ -50,20 +50,36 @@ android {
         javaMaxHeapSize "4g"
     }
 
+    signingConfigs {
+        release {
+            keyAlias 'tianyi'
+            keyPassword 'tianyi123'
+            storeFile file('./keystore/tianyi.keystore')
+            storePassword 'tianyi123'
+            v1SigningEnabled true
+            v2SigningEnabled true
+
+        }
+    }
+
     buildTypes {
         debug {
             minifyEnabled false
             useProguard false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-unity.txt'
             jniDebuggable true
 
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-unity.txt'
+            signingConfig signingConfigs.release
         }
+
         release {
             lintOptions {
                 disable 'MissingTranslation'
             }
             minifyEnabled false
+
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+            signingConfig signingConfigs.release
         }
 
     }
