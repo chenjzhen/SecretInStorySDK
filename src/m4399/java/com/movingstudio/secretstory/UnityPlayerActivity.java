@@ -45,7 +45,7 @@ import com.umeng.socialize.UMShareAPI;
 import com.unity3d.player.UnityPlayer;
 
 public class UnityPlayerActivity extends Activity
-    implements DialogInterface.OnDismissListener {
+    implements DialogInterface.OnDismissListener,SingleRechargeListener {
     protected UnityPlayer mUnityPlayer; // don't change the name of this variable; referenced from native code
     private String _gameObjectToNotify;
     ProgressDialog mWaitProgress = null;
@@ -105,59 +105,12 @@ public class UnityPlayerActivity extends Activity
         //配置SDK
         new OperateCenterConfig.Builder(this)
             .setDebugEnabled(true)  //发布游戏时，要设为false
-            .setOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT) //界面方向
+            .setOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE) //界面方向
             .setSupportExcess(true) //设置是否支持超出金额充值
             .setGameKey("120126")    //换成实际游戏的gamekey
             .setGameName("故事里的秘密")    //换成实际游戏的名字，原则上与游戏名字匹配
             .build();
-        SingleRechargeListener singleRechargeListener = new SingleRechargeListener() {
-
-            /*
-             * 充值过程结束时SDK回调此方法
-             *
-             * 充值过程结束并不代表订单生命周期全部完成，SDK还需要查询订单状态，游戏
-             * 要根据订单状态决定是否发放物品等
-             *
-             * @param msg 表示充值结果的友好的文本说明
-             *
-             */
-            @Override
-            public void onRechargeFinished(boolean success, String msg) {
-                Log.d(TAG, "Pay: [" + success + ", " + msg + "]");
-                //				showInToast(msg);
-            }
-
-            /*
-             * 充值过程成功完成后，SDK会查询订单状态，根据订单状态状态正常则通知游戏发放物品
-             *
-             * @param shouldDeliver
-             *  是否要发放物品
-             * @param o
-             *  封装了最后提交的订单信息的对象，主要包含以下成员，各成员都有getter方法
-             *  payChannel：   充值渠道
-             *  orderId：      	充值订单号
-             *  je：			充值金额
-             *  goods：        	购买的物品
-             *
-             * @return
-             *  物品发放过程是否成功
-             */
-
-            @Override
-            public boolean notifyDeliverGoods(boolean shouldDeliver, RechargeOrder o) {
-                if (shouldDeliver) {
-                    Log.d(TAG, "单机充值发放物品, [" + o + "]");
-                    //					showInToast("发放物品, " + o);
-                    //mSKUList.add("您花费 " + o.getJe() + "元， 购买了 " + o.getGoods());
-
-                    return true;
-                } else {
-                    Log.d(TAG, "单机充值查询到的订单状态不正常，建议不要发放物品");
-                    return false;
-                }
-            }
-        };
-        mOpeCenter.init(this, singleRechargeListener);
+        mOpeCenter.init(this, this);
     }
 
     public void startPurchase(String gameObjectToNotify) {
@@ -168,61 +121,7 @@ public class UnityPlayerActivity extends Activity
         if (enableToast) { Toast.makeText(this, message, Toast.LENGTH_LONG).show(); }
     }
 
-    // Quit Unity
-    @Override
-    protected void onDestroy() {
-        mUnityPlayer.quit();
-        super.onDestroy();
-    }
 
-    // Pause Unity
-    @Override
-    protected void onPause() {
-        super.onPause();
-        mUnityPlayer.pause();
-        MobclickAgent.onPause(this);
-    }
-
-    // Resume Unity
-    @Override
-    protected void onResume() {
-        super.onResume();
-        mUnityPlayer.resume();
-        MobclickAgent.onResume(this);
-    }
-
-    @Override
-    protected void onStart() {
-        super.onStart();
-        mUnityPlayer.start();
-    }
-
-    @Override
-    public void onRestart() {
-        super.onRestart();
-    }
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-        mUnityPlayer.stop();
-    }
-
-    // Low Memory Unity
-    @Override
-    public void onLowMemory() {
-        super.onLowMemory();
-        mUnityPlayer.lowMemory();
-    }
-
-    // Trim Memory Unity
-    @Override
-    public void onTrimMemory(int level) {
-        super.onTrimMemory(level);
-        if (level == TRIM_MEMORY_RUNNING_CRITICAL) {
-            mUnityPlayer.lowMemory();
-        }
-    }
 
     @Override
     public void onNewIntent(Intent newIntent) {
@@ -269,6 +168,11 @@ public class UnityPlayerActivity extends Activity
                     | View.SYSTEM_UI_FLAG_FULLSCREEN
                     | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
         }
+    }
+
+    @Override
+    public void onPointerCaptureChanged(boolean hasCapture) {
+
     }
 
     // For some reason the multiple keyevent type is not supported by the ndk.
@@ -583,7 +487,96 @@ public class UnityPlayerActivity extends Activity
 
             //AresPlatform.getInstance().pay(this, params);
         }
+    }
 
+    /*===========   支付回调相关      ===========*/
+
+    /*
+     * 充值过程结束时SDK回调此方法
+     *
+     * 充值过程结束并不代表订单生命周期全部完成，SDK还需要查询订单状态，游戏
+     * 要根据订单状态决定是否发放物品等
+     *
+     * @param msg 表示充值结果的友好的文本说明
+     *
+     */
+    @Override
+    public void onRechargeFinished(boolean success, String msg) {
+        Log.d(TAG, "onRechargeFinished,success=["+success+"],msg=[" + msg + "]");
+    }
+
+    /*
+     * 充值过程成功完成后，SDK会查询订单状态，根据订单状态状态正常则通知游戏发放物品
+     *
+     * @param shouldDeliver
+     *  是否要发放物品
+     * @param o
+     *  封装了最后提交的订单信息的对象，主要包含以下成员，各成员都有getter方法
+     *  payChannel：   充值渠道
+     *  orderId：      	充值订单号
+     *  je：			充值金额
+     *  goods：        	购买的物品
+     *
+     * @return
+     *  物品发放过程是否成功
+     */
+    @Override
+    public boolean notifyDeliverGoods(boolean shouldDeliver, RechargeOrder rechargeOrder) {
+
+        Log.d(TAG, "notifyDeliverGoods,shouldDeliver=["+shouldDeliver+"],rechargeOrder=[" + rechargeOrder + "]");
+        if (shouldDeliver) {
+            Log.d(TAG, "单机充值发放物品, [" + rechargeOrder + "]");
+            String payMoney = rechargeOrder.getJe();
+            OnPayCallback(payMoney);
+            showToast("您购买的道具已方法");
+            return true;
+        } else {
+            Log.d(TAG, "单机充值查询到的订单状态不正常，建议不要发放物品");
+
+            showToast("未查询到充值成功状态，无法发放物品，请联系客服");
+            return false;
+        }
+    }
+
+    public void OnPayCallback(String payMoney){
+        if("1".equals(payMoney)){
+            // 最后一位未ProductId
+            UnityPlayer.UnitySendMessage("ShopCanvas", "OnPricePaid", "1");
+        }else if("6".equals(payMoney)){
+            UnityPlayer.UnitySendMessage("ShopCanvas", "OnPricePaid", "2");
+        }else if("10".equals(payMoney)){
+            UnityPlayer.UnitySendMessage("ShopCanvas", "OnPricePaid", "3");
+        }
+    }
+
+
+    /**
+     * 支付后回调
+     * @param placementId
+     * @param rewarded
+     */
+    public void OnRewardAdsClosed(int placementId, boolean rewarded) {
+        Log.e("OnRewardAdsClosed", Integer.toString(placementId));
+        // Toast.makeText(this, "onRewardedVideoAdClosed", Toast.LENGTH_SHORT).show();
+        if (placementId == 1) {
+            if (rewarded) {
+                UnityPlayer.UnitySendMessage("Scene", "OnRewardBasedVideoAdDidClose", "AddHP");
+            } else {
+                UnityPlayer.UnitySendMessage("Scene", "OnRewardBasedVideoAdDidClose", "GameOver");
+            }
+        } else if (placementId == 2) {
+            if (rewarded) {
+                UnityPlayer.UnitySendMessage("Scene", "OnRewardBasedVideoAdDidClose", "ShowHint");
+            } else {
+                UnityPlayer.UnitySendMessage("Scene", "OnRewardBasedVideoAdDidClose", "HideHint");
+            }
+        } else if (placementId == 4) {
+            if (rewarded) {
+                UnityPlayer.UnitySendMessage("ShopCanvas", "OnRewardBasedVideoAdDidClose", "AddKey");
+            } else {
+                UnityPlayer.UnitySendMessage("ShopCanvas", "OnRewardBasedVideoAdDidClose", "DontAddKey");
+            }
+        }
     }
 
     /**
@@ -852,30 +845,6 @@ public class UnityPlayerActivity extends Activity
 
     }
 
-    public void OnRewardAdsClosed(int placementId, boolean rewarded) {
-        Log.e("OnRewardAdsClosed", Integer.toString(placementId));
-        // Toast.makeText(this, "onRewardedVideoAdClosed", Toast.LENGTH_SHORT).show();
-        if (placementId == 1) {
-            if (rewarded) {
-                UnityPlayer.UnitySendMessage("Scene", "OnRewardBasedVideoAdDidClose", "AddHP");
-            } else {
-                UnityPlayer.UnitySendMessage("Scene", "OnRewardBasedVideoAdDidClose", "GameOver");
-            }
-        } else if (placementId == 2) {
-            if (rewarded) {
-                UnityPlayer.UnitySendMessage("Scene", "OnRewardBasedVideoAdDidClose", "ShowHint");
-            } else {
-                UnityPlayer.UnitySendMessage("Scene", "OnRewardBasedVideoAdDidClose", "HideHint");
-            }
-        } else if (placementId == 4) {
-            if (rewarded) {
-                UnityPlayer.UnitySendMessage("ShopCanvas", "OnRewardBasedVideoAdDidClose", "AddKey");
-            } else {
-                UnityPlayer.UnitySendMessage("ShopCanvas", "OnRewardBasedVideoAdDidClose", "DontAddKey");
-            }
-        }
-    }
-
     public int getChannelId() {
         return Helper.getChannelId(getBaseContext());
     }
@@ -884,4 +853,62 @@ public class UnityPlayerActivity extends Activity
         return true;
     }
 
+
+
+    // ----------------------------------------
+    // Quit Unity
+    @Override
+    protected void onDestroy() {
+        mUnityPlayer.quit();
+        super.onDestroy();
+    }
+
+    // Pause Unity
+    @Override
+    protected void onPause() {
+        super.onPause();
+        mUnityPlayer.pause();
+        MobclickAgent.onPause(this);
+    }
+
+    // Resume Unity
+    @Override
+    protected void onResume() {
+        super.onResume();
+        mUnityPlayer.resume();
+        MobclickAgent.onResume(this);
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        mUnityPlayer.start();
+    }
+
+    @Override
+    public void onRestart() {
+        super.onRestart();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        mUnityPlayer.stop();
+    }
+
+    // Low Memory Unity
+    @Override
+    public void onLowMemory() {
+        super.onLowMemory();
+        mUnityPlayer.lowMemory();
+    }
+
+    // Trim Memory Unity
+    @Override
+    public void onTrimMemory(int level) {
+        super.onTrimMemory(level);
+        if (level == TRIM_MEMORY_RUNNING_CRITICAL) {
+            mUnityPlayer.lowMemory();
+        }
+    }
 }
