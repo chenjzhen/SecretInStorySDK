@@ -56,6 +56,8 @@ public class UnityPlayerActivity extends Activity
     int sceneId = 0;
     boolean enableToast = false;
 
+    private boolean isInitSDK;
+
     //m4399
     private SingleOperateCenter mOpeCenter;
 
@@ -94,9 +96,6 @@ public class UnityPlayerActivity extends Activity
             }
         }, 1000);
 
-
-        init4399SDK();
-
     }
 
     private void init4399SDK(){
@@ -104,11 +103,11 @@ public class UnityPlayerActivity extends Activity
         mOpeCenter = SingleOperateCenter.getInstance();
         //配置SDK
         new OperateCenterConfig.Builder(this)
-            .setDebugEnabled(true)  //发布游戏时，要设为false
+            .setDebugEnabled(false)  //发布游戏时，要设为false
             .setOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE) //界面方向
             .setSupportExcess(true) //设置是否支持超出金额充值
             .setGameKey("120126")    //换成实际游戏的gamekey
-            .setGameName("故事里的秘密")    //换成实际游戏的名字，原则上与游戏名字匹配
+            .setGameName("秘密")    //换成实际游戏的名字，原则上与游戏名字匹配
             .build();
         mOpeCenter.init(this, this);
     }
@@ -395,6 +394,7 @@ public class UnityPlayerActivity extends Activity
      * 游戏内购（必接）
      */
     public void pay(int productId) {
+
         if (productId == 1) {
             if(mOpeCenter!=null){
                 mOpeCenter.recharge(this,"1","6个币");
@@ -877,6 +877,11 @@ public class UnityPlayerActivity extends Activity
         super.onResume();
         mUnityPlayer.resume();
         MobclickAgent.onResume(this);
+
+        if(!isInitSDK){
+            init4399SDK();
+            isInitSDK = true;
+        }
     }
 
     @Override

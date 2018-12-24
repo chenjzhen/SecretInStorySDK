@@ -105,7 +105,7 @@
         <!-- ############ facebook的Activity注册 ############ -->
         <activity android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation" android:label="@string/app_name" android:name="com.umeng.facebook.FacebookActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar" />
         <!--1104087112943046-->
-        <provider android:authorities="com.facebook.app.FacebookContentProvider1266254913438718" android:exported="true" android:name="com.umeng.facebook.FacebookContentProvider" />
+        <!--<provider android:authorities="com.facebook.app.FacebookContentProvider1266254913438718" android:exported="true" android:name="com.umeng.facebook.FacebookContentProvider" />-->
         <!-- 使用fb的时候开启，不使用不用开启-->
         <!--  <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/facebook_app_id" />-->
         <!-- ############ weixin ############ -->
